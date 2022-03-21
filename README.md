@@ -1,24 +1,20 @@
-![GitHub release](https://img.shields.io/github/release/johnnync13/XiaomiGaming.svg)
 # Support me and this project
-Hi, this is Johnny, I'm an Engineering student. Life and university studies are expensive and the work is hard. My repositories are free, please consider rewarding me. Thank you.
+Hi, this is Gaojiarong, I'm an Engineering worker. Life is expensive and the work is hard. My repositories are free, please consider rewarding me. Thank you.
 
-### 4 ways to support me:
-1. [Reward me on PayPal](https://www.paypal.me/johnnync13)  or entry to my pool and win money [Kuailian](http://app.kuailiandp.com/auth/register/ref/a03805be-c118-4962-9bbe-87dfceb67802)
-2. Donate BTC: 3R13Ye85VwuzrBEJf32dZgREHsFsFpoG4m
-3. Donate ETH: 0x13f430523CAB662faA6924D6fbA4FdFA973A693b
-4. Please give me feedback: Open (or help with) [issues](https://github.com/johnnync13/Xiaomi-Notebook-Air-1Gen/issues) or fork and send a pull request if you find some improvements to be made!
+### 1 ways to support me:
+1. Please give me feedback: Open (or help with) [issues](https://github.com/johnnync13/Xiaomi-Notebook-Air-1Gen/issues) or fork and send a pull request if you find some improvements to be made!
 
-# EFI Folder for the Xiaomi Gaming 9th Generation""
+# EFI Folder for the Xiaomi Gaming 8th Generation""
 
 ### MacOS Versions Supported:
 * macOS 10.13 High Sierra
 * macOS 10.14 Mojave
 * macOS 10.15 Catalina
 * macOS 11.00 Big Sur
-* macOS 12.3 Monterey
+* macOS 12.00 Monterey
 
 ### What do I need?
-* Xiaomi Xiaomi Gaming 8th Generation 15.6" 8750h/8300h
+* Xiaomi Xiaomi Gaming 9th Generation 15.6" 9750h/
 * macOS or windows PC to create the install USB
 * 8GB or larger USB stick (USB3 preferred for speed)
 * Latest copy of these files (https://github.com/johnnync13/XiaomiGaming/releases)
@@ -39,40 +35,20 @@ Hi, this is Johnny, I'm an Engineering student. Life and university studies are 
 * Brightness keys
 * Built-in camera
 * Built-in mic 
-* Bluetooth Intel
+* Wifi/Bluetooth Intel
 * FileVault Disk encryption (Always make a backup before switching on!!!)
 * FN brightness adjustment (SSDT-FN.aml Fix By [shomerchang](https://github.com/shomerchang))
 * Card Reader
 
-### Half working:
-* [Wifi Intel]() (still buggy for now)
-* [Wifi Intel Gui](https://github.com/1hbb/OpenIntelWireless-Factory/releases)
-
 ### Not working:
+* HDMI output
 * Nvidia GPU (Not supported under macOS and probably never will be)
-
-### Better WiFi solution
-You can buy the network card that can be driven by MacOS as shown in the picture. It is recommended to use the wireless network card removed from the Mac. You only need to use the adapter board and insert it into the PCIe slot on the motherboard. You can use it without any driver.
-
-If you do not plan to use the WiFi network card provided by the machine, you can also use the coaxial extension line to link the wifi antenna provided by the machine, or purchase and install the wifi antenna separately as shown in the figure. However, please note that the wifi antenna cannot be attached to any surface containing metal, or it will greatly affect the signal strength. You can choose to paste the antenna on a non-metallic surface, as shown in the figure
-
-![image](https://github.com/johnnync13/XiaomiGaming/raw/master/images/WIFI.png)
 
 # Installation
 Sounds good! Where do we start? You need a computer with macOS or Windows (scroll down)
 
-## Clover or OpenCore?
-First let's figure out if we would like to use Clover or OpenCore. The pro's / con's listed:
-
-### Clover
-Pro's (+)
-+ Most used, best supported online
-+ Easy to configure with [Clover Configurator](https://mackie100projects.altervista.org/download-clover-configurator/)
-
-Con's (-)
-- Might be less compatible with macOS updates in the future
-- Less secure (csr 67 flag needed to inject kext drivers, SIP, the macOS security system, is off)
-- Need to put kext files in /Library/Extensions/
+## OpenCore
+First let's figure out if we would like to use OpenCore. The pro's / con's listed:
 
 ### OpenCore
 Pro's (+)
@@ -150,61 +126,6 @@ sudo diskutil mount /dev/disk0s1
 * Done! Reboot and enjoy macOS.
 
 ## From Windows:
-### Clover method:
-Downloading macOS:
-* Download [gibMacOS](https://github.com/corpnewt/gibMacOS/archive/master.zip) from https://github.com/corpnewt/gibMacOS/
-* Extract it somewhere and run gibMacOS.bat
-* Choose your desired macOS version by entering the number and pressing the ENTER key.
-* macOS will now download, grab a coffee.
-* Once the download is finished you can exit the program with the keys Q then ENTER
-
-Making the installer USB stick:
-* Insert your USB stick
-* Now run MakeInstall.bat **as Administrator**
-* **IMPORTANT:** In the next step it's important to choose the correct disk, the risk of deleting all the files on that pc are very high! Choose only your USB stick!
-* Enter the number of your USB stick and hit ENTER, then type Y and hit ENTER (All files on your USB stick will be deleted!)
-* Now go to the 'macOS Downloads\publicrelease' folder inside the 'gibMacOS' folder
-* Hold the Shift key and right-click the macOS folder that you want to install on the USB stick and click **Copy as path**
-* Go back to the MakeInstall.bat program and right-click in the window to paste the file path, then hit ENTER
-* Your USB stick will be created, have a second coffee.
-* When it's finished, close the program.
-
-Making the USB stick Xiaomi compatible:
-* Download the latest version of the EFI folder from [here](https://github.com/johnnync13/XiaomiGaming/releases)
-* Extract it somewhere
-* Open the BOOT drive from the Windows explorer (usually drive D:, E: or F:)
-* Replace the EFI folder on the BOOT drive with the EFI folder you just downloaded from this website.
-* Eject the USB stick and insert into Xiaomi laptop.
-
-Installing macOS:
-* Now boot the Xiaomi laptop from the install media (if trackpad is not working, use USB mouse. If network connection needed, use a Apple compatible USB Ethernet adapter)
-* Open Disk Utility and format the builtin SSD or second SSD with APFS (will delete all your files!!!)
-* Install macOS 
-* After install, boot from USB again but select SSD to boot from in the Clover Bootloader
-* Do initial macOS setup (use USB Ethernet adapter for internet)
-* Mount the ESP (EFI System Partition) on your SSD (check that you mount the correct EFI partition, numbers will vary!!!)
-
-```
-diskutil list
-sudo diskutil mount /dev/disk0s1
-```
-* Copy and overwrite the contents of the EFI folder from this website to the EFI folder on the ESP on your SSD.
-* Copy all the Kernel Extensions (kexts) from the EFI/CLOVER/kexts/Other to your system's /Library/Extensions folder (this is important, otherwise keyboard/trackpad and other devices might not work)
-* Execute these commands in Terminal to rebuild Kernel Extension Cache:
-
-```
-sudo chmod -R 755 /System/Library/Extensions/
-sudo chown -R root:wheel /System/Library/Extensions/
-sudo chmod -R 755 /Library/Extensions/
-sudo chown -R root:wheel /Library/Extensions/
-sudo touch /System/Library/Extensions/
-sudo touch /Library/Extensions/
-sudo kextcache -i / && sudo kextcache -u /
-```
-* Remove the USB stick from the laptop
-* Done! Reboot to enable all the kexts. Enjoy your Hackintosh!
-
-
 ### OpenCore method:
 Downloading macOS:
 * Download [gibMacOS](https://github.com/corpnewt/gibMacOS/archive/master.zip) from https://github.com/corpnewt/gibMacOS/
@@ -286,18 +207,6 @@ csrutil enable
 
 # Troubleshooting
 ### Some device in my system is not working under macOS!
-Using Clover:
-* Make sure all kexts are in /Library/Extensions/ then run:
-```
-sudo chmod -R 755 /System/Library/Extensions/
-sudo chown -R root:wheel /System/Library/Extensions/
-sudo chmod -R 755 /Library/Extensions/
-sudo chown -R root:wheel /Library/Extensions/
-sudo touch /System/Library/Extensions/
-sudo touch /Library/Extensions/
-sudo kextcache -i / && sudo kextcache -u /
-```
-* Reboot.
 
 Using OpenCore:
 * Make sure the kexts are in the EFI/OC/kexts folder on your SSD EFI system partition (ESP).
