@@ -4,7 +4,7 @@ Hi, this is Gaojiarong, I'm an Engineering worker. Life is expensive and the wor
 ### 1 ways to support me:
 1. Please give me feedback: Open (or help with) [issues](https://github.com/johnnync13/Xiaomi-Notebook-Air-1Gen/issues) or fork and send a pull request if you find some improvements to be made!
 
-# EFI Folder for the Xiaomi Gaming 8th Generation""
+# EFI Folder for the Xiaomi Gaming 9th Generation""
 
 ### MacOS Versions Supported:
 * macOS 10.13 High Sierra
@@ -242,7 +242,7 @@ One Of: CFG Lock, VarStoreInfo (VarOffset/VarName): 0x3C, VarStore: 0x3, Questio
 0x149421 		End One Of {29 02}  
   
 5- You can set up more variables to modify Bios. If you want exit, you must write reboot and click enter on keyboard.  
-  
+
 6- You can verify the CFG is unlocked or other parametres like SpeedShift is enabled in hackintool, section Utilities and press button Get AppleIntelInfo.  
 
 
