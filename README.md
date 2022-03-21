@@ -47,9 +47,6 @@ Hi, this is Gaojiarong, I'm an Engineering worker. Life is expensive and the wor
 # Installation
 Sounds good! Where do we start? You need a computer with macOS or Windows (scroll down)
 
-## OpenCore
-First let's figure out if we would like to use OpenCore. The pro's / con's listed:
-
 ### OpenCore
 Pro's (+)
 + Most secure (no csr 67 flag, SIP, the macOS security system, stays on)
@@ -63,42 +60,6 @@ Con's (-)
 - Without Theme UI until release.
 
 ## Installing from macOS:
-### Clover method:
-* On your mac, create your macOS USB install media (e.g. https://support.apple.com/en-us/HT201372)
-* Mount the ESP (EFI System Partition) on your USB stick: (check that you mount the correct EFI partition, numbers will vary!!!)
-
-```
-diskutil list
-sudo diskutil mount /dev/disk3s1
-```
-* Copy and overwrite the contents of the EFI folder on your USB stick with the contents of the EFI folder from this website.
-* Eject the USB stick from your computer and insert in the Xiaomi laptop.
-* Now boot the Xiaomi laptop from the install media (if trackpad is not working, use USB mouse. If network connection needed, use a Apple compatible USB Ethernet adapter)
-* Open Disk Utility and format the builtin SSD or second SSD with APFS (will delete all your files!!!)
-* Install macOS 
-* After install, boot from USB again but select SSD to boot from in the Clover Bootloader
-* Do initial macOS setup (use USB Ethernet adapter for internet)
-* Mount the ESP (EFI System Partition) on your SSD (check that you mount the correct EFI partition, numbers will vary!!!)
-
-```
-diskutil list
-sudo diskutil mount /dev/disk0s1
-```
-* Copy and overwrite the contents of the EFI folder from this website to the EFI folder on the ESP on your SSD.
-* Copy all the Kernel Extensions (kexts) from the EFI/CLOVER/kexts/Other to your system's /Library/Extensions folder (this is important, otherwise keyboard/trackpad and other devices might not work)
-* Execute these commands in Terminal to rebuild Kernel Extension Cache:
-
-```
-sudo chmod -R 755 /System/Library/Extensions/
-sudo chown -R root:wheel /System/Library/Extensions/
-sudo chmod -R 755 /Library/Extensions/
-sudo chown -R root:wheel /Library/Extensions/
-sudo touch /System/Library/Extensions/
-sudo touch /Library/Extensions/
-sudo kextcache -i / && sudo kextcache -u /
-```
-* Remove the USB stick from the laptop
-* Done! Reboot to enable all the kexts. Enjoy your Hackintosh!
 
 ### OpenCore method:
 * On your mac, create your macOS USB install media (e.g. https://support.apple.com/en-us/HT201372)
