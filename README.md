@@ -17,7 +17,7 @@ Hi, this is Gaojiarong, I'm an Engineering worker. Life is expensive and the wor
 * Xiaomi Xiaomi Gaming 9th Generation 15.6" 9750h/
 * macOS or windows PC to create the install USB
 * 8GB or larger USB stick (USB3 preferred for speed)
-* Latest copy of these files (https://github.com/johnnync13/XiaomiGaming/releases)
+* Latest copy of these files (https://github.com/490717775v/xiaomi-gaming-2019-15.6-i7-9750-rtx2060)
 * (optional for multiboot) Second (M.2 SATA) SSD installed inside the laptop.
 * (possibly) USB mouse for install until trackpad is working
 * (possibly) For macOS 10.15: a natively supported (e.g. Apple) USB Ethernet adapter for installation
