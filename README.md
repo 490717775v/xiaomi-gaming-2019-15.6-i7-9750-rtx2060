@@ -3,6 +3,7 @@ Hi, this is Gaojiarong, I'm an Engineering worker. Life is expensive and the wor
 
 ### 1 ways to support me:
 1. Please give me feedback: Open (or help with) [issues](https://github.com/johnnync13/Xiaomi-Notebook-Air-1Gen/issues) or fork and send a pull request if you find some improvements to be made!
+2. QQ:490717775 Mail：490717775@qq.com
 
 # EFI Folder for the Xiaomi Gaming 9th Generation""
 
